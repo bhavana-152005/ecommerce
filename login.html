@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bellevouix Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-header">
+    <img src="../images/bellevouix-logo.png" alt="Bellevouix Logo" class="login-logo">
+    <h1>Welcome to Bellevouix</h1>
+  </div>
+  <h2>Login to continue</h2>
+ 
+  <input type="text" id="username" placeholder="Username or Email">
+
+  <div class="password-container">
+    <input type="password" id="password" placeholder="Password">
+    <button type="button" id="togglePassword" class="eye-icon" aria-label="Show password" aria-pressed="false"></button>
+  </div>
+
+  <select id="role">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <p class="admin-hint hidden">Select Admin to reveal admin access instructions.</p>
+
+  <button onclick="login()">Login</button>
+
+  <p class="login-link">Don't have an account? <a href="signup.html">Create one</a></p>
+</div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

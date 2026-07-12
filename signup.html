@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bellevouix</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-header">
+        <img src="../images/bellevouix-logo.png" alt="Bellevouix Logo" class="login-logo">
+        <h1>Join Bellevouix</h1>
+    </div>
+    <h2>Create your account</h2>
+    
+    <input type="text" id="username" placeholder="Username">
+
+    <input type="email" id="email" placeholder="Email Address">
+
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" id="togglePassword" class="eye-icon" aria-label="Show password" aria-pressed="false"></button>
+    </div>
+
+    <div class="password-container">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <button type="button" id="toggleConfirmPassword" class="eye-icon" aria-label="Show confirm password" aria-pressed="false"></button>
+    </div>
+
+    <select id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <div id="adminCodeContainer" style="display: none;">
+        <input type="text" id="adminCode" placeholder="Admin Registration Code">
+    </div>
+
+    <p class="admin-hint">Admin sign-up requires a special registration code</p>
+
+    <button onclick="signup()">Create Account</button>
+
+    <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/signup.js"></script>
+</body>
+</html>

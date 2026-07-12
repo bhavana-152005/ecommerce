@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bellevouix</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ADMIN HEADER -->
+    <header class="header admin-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="admin.html">
+                    <img src="../images/bellevouix-logo.png" alt="Bellevouix" class="logo-img">
+                </a>
+                <span class="admin-badge">ADMIN PORTAL</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Back to Store</a>
+                <button class="btn-secondary" onclick="logout()">Logout</button>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-info">
+                    <span class="admin-name">Bellevouix Operations</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="admin-container">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-item active" data-section="dashboard">
+                <span class="sidebar-icon">📊</span>
+                <span>Dashboard</span>
+            </div>
+            <div class="sidebar-item" data-section="products">
+                <span class="sidebar-icon">📦</span>
+                <span>Products</span>
+            </div>
+            <div class="sidebar-item" data-section="inventory">
+                <span class="sidebar-icon">📋</span>
+                <span>Inventory</span>
+            </div>
+            <div class="sidebar-item" data-section="users">
+                <span class="sidebar-icon">👥</span>
+                <span>User Verification</span>
+            </div>
+            <div class="sidebar-item" data-section="orders">
+                <span class="sidebar-icon">🛍️</span>
+                <span>Orders</span>
+            </div>
+            <div class="sidebar-item" data-section="media">
+                <span class="sidebar-icon">📸</span>
+                <span>Media Upload</span>
+            </div>
+            <div class="sidebar-item" data-section="analytics">
+                <span class="sidebar-icon">📈</span>
+                <span>Analytics</span>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- DASHBOARD SECTION -->
+            <section class="admin-hero">
+                <div class="admin-hero-copy">
+                    <p class="admin-label">Control center</p>
+                    <h1 class="admin-title">Bellevouix Admin Dashboard</h1>
+                    <p class="admin-subtitle">Monitor sales, manage products, review orders, and upload campaign imagery from one responsive operations workspace.</p>
+                </div>
+                <div class="admin-hero-actions">
+                    <button class="btn-primary" onclick="switchSection('inventory')">Inventory</button>
+                    <button class="btn-primary ghost" onclick="switchSection('orders')">Orders</button>
+                </div>
+            </section>
+
+            <section id="dashboard" class="admin-section active">
+                <h2 class="section-heading">Dashboard Overview</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="totalProducts">0</div>
+                            <div class="stat-label">Total Products</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="totalUsers">0</div>
+                            <div class="stat-label">Registered Users</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="totalRevenue">₹0</div>
+                            <div class="stat-label">Total Revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="stat-icon">🛍️</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="totalOrders">0</div>
+                            <div class="stat-label">Total Orders</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="activityList">
+                        <!-- Activity items loaded by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRODUCTS MANAGEMENT SECTION -->
+            <section id="products" class="admin-section">
+                <div class="section-header">
+                    <h1 class="admin-title">Product Management</h1>
+                    <button class="btn-primary" onclick="openAddProductModal()">
+                        ➕ Add New Product
+                    </button>
+                </div>
+
+                <div class="search-container admin-search-container">
+                    <input type="text" id="adminProductSearch" placeholder="Search products by name, brand, category, or size" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="all">All Products</button>
+                    <button class="filter-tab" data-category="men">Men</button>
+                    <button class="filter-tab" data-category="women">Women</button>
+                    <button class="filter-tab" data-category="kids">Kids</button>
+                    <button class="filter-tab" data-category="accessories">Accessories</button>
+                </div>
+
+                <div class="products-table-container">
+                    <table class="admin-table" id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Products loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- INVENTORY SECTION -->
+            <section id="inventory" class="admin-section">
+                <h1 class="admin-title">Inventory Management</h1>
+                
+                <div class="inventory-filters">
+                    <select id="inventoryCategory" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="kids">Kids</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+
+                    <select id="stockStatus" class="filter-select">
+                        <option value="all">All Stock Levels</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+
+                <div class="search-container admin-search-container">
+                    <input type="text" id="inventorySearch" placeholder="Search inventory by product, brand, category, or stock" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="inventory-grid" id="inventoryGrid">
+                    <!-- Inventory items loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- USER VERIFICATION SECTION -->
+            <section id="users" class="admin-section">
+                <h1 class="admin-title">User Profile Verification</h1>
+                
+                <div class="verification-tabs">
+                    <button class="verify-tab active" data-status="pending">Pending Verification</button>
+                    <button class="verify-tab" data-status="verified">Verified Users</button>
+                    <button class="verify-tab" data-status="flagged">Flagged Profiles</button>
+                </div>
+
+                <div class="search-container admin-search-container">
+                    <input type="text" id="userSearch" placeholder="Search users by name, email, phone, or status" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="users-grid" id="usersGrid">
+                    <!-- User profiles loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- ORDERS SECTION -->
+            <section id="orders" class="admin-section">
+                <h1 class="admin-title">Order Management</h1>
+                
+                <div class="search-container admin-search-container">
+                    <input type="text" id="ordersSearch" placeholder="Search orders by ID, customer, date, or status" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="orders-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Orders loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- MEDIA UPLOAD SECTION -->
+            <section id="media" class="admin-section">
+                <div class="section-header">
+                    <h1 class="admin-title">Media Upload & Gallery</h1>
+                    <div class="upload-info">
+                        <p>Upload new product images that will be featured prominently on the homepage for all users.</p>
+                    </div>
+                </div>
+
+                <div class="upload-section">
+                    <div class="upload-card">
+                        <h3>Upload New Images</h3>
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-placeholder">
+                                <span class="upload-icon">📤</span>
+                                <p>Drag & drop images here or click to browse</p>
+                                <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                                <button class="btn-primary" onclick="document.getElementById('imageInput').click()">
+                                    Choose Files
+                                </button>
+                            </div>
+                        </div>
+                        <div class="upload-options">
+                            <select id="imageCategory" class="filter-select">
+                                <option value="featured">Featured (Homepage)</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                                <option value="kids">Kids</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                            <button class="btn-primary" onclick="uploadImages()">Upload Images</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-section">
+                    <h3>Uploaded Images Gallery</h3>
+                    <div class="search-container admin-search-container">
+                        <input type="text" id="mediaSearch" placeholder="Search uploaded media by file name or category" class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-category="all">All Images</button>
+                        <button class="filter-tab" data-category="featured">Featured</button>
+                        <button class="filter-tab" data-category="men">Men</button>
+                        <button class="filter-tab" data-category="women">Women</button>
+                        <button class="filter-tab" data-category="kids">Kids</button>
+                        <button class="filter-tab" data-category="accessories">Accessories</button>
+                    </div>
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Images loaded by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ANALYTICS SECTION -->
+            <section id="analytics" class="admin-section">
+                <h1 class="admin-title">Analytics & Reports</h1>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Sales Overview</h3>
+                        <canvas id="salesChart" class="analytics-chart"></canvas>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Top Products</h3>
+                        <div id="topProductsList">
+                            <!-- Top products loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Category Performance</h3>
+                        <canvas id="categoryChart" class="analytics-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ADD/EDIT PRODUCT MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <button class="modal-close" onclick="closeProductModal()">✕</button>
+            <div class="modal-body">
+                <h2 id="modalTitle">Add New Product</h2>
+                
+                <form id="productForm" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" id="productName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input type="text" id="productBrand" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="productCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                                <option value="kids">Kids</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subcategory</label>
+                            <input type="text" id="productSubcategory">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Price (₹)</label>
+                            <input type="number" id="productPrice" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Original Price (₹)</label>
+                            <input type="number" id="productOriginalPrice">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stock Quantity</label>
+                            <input type="number" id="productStock" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Image</label>
+                        <input type="text" id="productImage" placeholder="Paste an image URL or upload a file below">
+                        <small>Uploaded images are saved with the product and shown in the store.</small>
+                        <input type="file" id="productImageUpload" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available Sizes (comma separated)</label>
+                        <input type="text" id="productSizes" placeholder="S, M, L, XL">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="productNew">
+                            Mark as New Arrival
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeProductModal()">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/seirraa.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
