@@ -1,0 +1,18 @@
+{
+  "name": "bellevouix-store",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check api/health.js && node --check api/products.js && node --check api/login.js && node --check api/signup.js && node --check api/orders.js",
+    "start": "powershell -ExecutionPolicy Bypass -File .\\run_api.ps1",
+    "start:vercel": "vercel dev",
+    "start:java": "powershell -ExecutionPolicy Bypass -File .\\run_api.ps1",
+    "start:seirraa": "powershell -ExecutionPolicy Bypass -File .\\start_seirraa.ps1"
+  },
+  "dependencies": {
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "vercel": "^37.14.0"
+  }
+}
