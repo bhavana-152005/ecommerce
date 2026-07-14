@@ -1,0 +1,13 @@
+-- Bellevouix database setup runner.
+--
+-- Recommended command from the project root:
+-- mysql -u root -p < sql/bellevouix_database.sql
+--
+-- If you are already inside the sql/database folder, use:
+-- mysql -u root -p < ../bellevouix_database.sql
+--
+-- The full executable SQL file is kept at:
+-- ../bellevouix_database.sql
+--
+-- Why? Keeping one complete file prevents duplicate schema/data scripts
+-- from slowly becoming different from each other.
