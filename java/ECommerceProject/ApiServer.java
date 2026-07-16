@@ -65,7 +65,7 @@ public class ApiServer {
                 Path.of("frontend").toAbsolutePath().normalize(),
                 Path.of("..", "frontend").toAbsolutePath().normalize(),
                 Path.of("..", "..", "frontend").toAbsolutePath().normalize(),
-                Path.of(".").toAbsolutePath().normalize().resolve("..\..\frontend").normalize()
+                Path.of("..", "..", "..", "frontend").toAbsolutePath().normalize()
         };
 
         for (Path candidate : candidates) {
