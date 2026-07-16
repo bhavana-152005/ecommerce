@@ -872,7 +872,7 @@ function quickView(productId) {
                         <span style="font-size: 20px; color: var(--text-light); text-decoration: line-through;">
                             Rs.${product.originalPrice}
                         </span>
-                        <span style="font-size: 16px; color: var(--primary-color); font-weight: 600;">
+                        <span style="font-size: 16px; color: var(--primary); font-weight: 600;">
                             (${product.discount}% OFF)
                         </span>
                     ` : ''}
@@ -897,7 +897,7 @@ function quickView(productId) {
                     <button data-quick-view-add
                             disabled
                             onclick="handleQuickViewAddToCart(${product.id})"
-                            style="flex: 1; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">
+                            style="flex: 1; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">
                         Select size to add
                     </button>
                     <button onclick="toggleWishlist(${product.id})" 

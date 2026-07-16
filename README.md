@@ -41,7 +41,7 @@ mysql -u root -p < sql/bellevouix_database.sql
 
 and set `MYSQL_URL` / `MYSQL_USER` / `MYSQL_PASSWORD` (see `INTEGRATION_GUIDE.md`).
 
-Local admin shortcut (demo mode): username `admin`, password `admin123`.
+Demo credentials (when the Java server is running in memory-fallback mode): user `sarah` / `user123`, admin `admin` / `admin123`. The "any username/password" client fallback in `login.js` only applies when the API is unreachable (e.g. static-only preview).
 
 ## Deploy on Vercel
 

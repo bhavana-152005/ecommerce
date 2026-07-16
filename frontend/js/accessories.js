@@ -718,7 +718,7 @@ function quickView(productId) {
         <h2 style="font-size: 28px; margin-bottom: 15px;">${product.name}</h2>
         <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
           <span style="font-size: 32px; font-weight: 700;">Rs.${product.price}</span>
-          ${product.originalPrice ? `<span style="font-size: 20px; color: var(--text-light); text-decoration: line-through;">Rs.${product.originalPrice}</span><span style="font-size: 16px; color: var(--primary-color); font-weight: 600;">(${product.discount}% OFF)</span>` : ""}
+          ${product.originalPrice ? `<span style="font-size: 20px; color: var(--text-light); text-decoration: line-through;">Rs.${product.originalPrice}</span><span style="font-size: 16px; color: var(--primary); font-weight: 600;">(${product.discount}% OFF)</span>` : ""}
         </div>
         <div style="margin-bottom: 24px;">
           <div style="font-weight: 600; margin-bottom: 10px;">Available Sizes</div>
@@ -739,7 +739,7 @@ function quickView(productId) {
           </div>
         </div>
         <div style="display: flex; gap: 15px; margin-bottom: 25px;">
-          <button data-quick-view-add disabled onclick="handleQuickViewAddToCart(${product.id})" style="flex: 1; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">Select size to add</button>
+          <button data-quick-view-add disabled onclick="handleQuickViewAddToCart(${product.id})" style="flex: 1; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">Select size to add</button>
           <button onclick="toggleWishlist(${product.id})" style="padding: 15px 20px; background: white; border: 2px solid var(--border-color); border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;">${isInWishlist(product.id) ? "Remove from Wishlist" : "Add to Wishlist"}</button>
         </div>
         <div style="padding: 20px; background: var(--bg-light); border-radius: 12px;">
