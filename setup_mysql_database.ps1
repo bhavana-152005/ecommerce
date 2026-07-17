@@ -23,7 +23,7 @@ if (-not $MysqlExe -or -not (Test-Path $MysqlExe)) {
     Write-Error "mysql.exe was not found. Install MySQL Server or pass -MysqlExe 'C:\path\to\mysql.exe'."
 }
 
-$sqlFile = Join-Path $PSScriptRoot "bellevouix_database.sql"
+$sqlFile = Join-Path $PSScriptRoot "sql\bellevouix_database.sql"
 $sourcePath = $sqlFile.Replace("\", "/")
 
 Write-Host "Loading Bellevouix database from $sqlFile"

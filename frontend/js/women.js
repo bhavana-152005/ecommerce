@@ -16,471 +16,227 @@ function logout() {
 }
 
 // ==========================================
-// MEN'S PRODUCTS DATA
+// WOMEN'S PRODUCTS DATA
 // ==========================================
-const menProducts = [
-    // T-SHIRTS
+const womenProducts = [
+    // DRESSES
     {
-        id: 1001,
-        name: 'Classic Cotton T-Shirt',
+        id: 1,
+        name: 'Floral Maxi Dress',
         brand: 'Bellevouix',
-        category: 'tshirts',
-        price: 799,
-        originalPrice: 1299,
-        discount: 38,
-        rating: 4.5,
-        ratingCount: 245,
-        image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 50
-    },
-    {
-        id: 1002,
-        name: 'Graphic Print Tee',
-        brand: 'StreetStyle',
-        category: 'tshirts',
-        price: 899,
-        originalPrice: 1499,
-        discount: 40,
-        rating: 4.6,
-        ratingCount: 312,
-        image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 45
-    },
-    {
-        id: 1003,
-        name: 'V-Neck Basic Tee',
-        brand: 'Essentials',
-        category: 'tshirts',
-        price: 699,
-        originalPrice: 1199,
-        discount: 42,
-        rating: 4.4,
-        ratingCount: 189,
-        image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 60
-    },
-    {
-        id: 1004,
-        name: 'Polo Neck T-Shirt',
-        brand: 'ClassicWear',
-        category: 'tshirts',
-        price: 1099,
-        originalPrice: 1799,
-        discount: 39,
+        category: 'dresses',
+        price: 1899,
+        originalPrice: 2999,
+        discount: 37,
         rating: 4.7,
-        ratingCount: 267,
-        image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=500&fit=crop',
+        ratingCount: 342,
+        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop',
         isNew: true,
-        sizes: ['M', 'L', 'XL', 'XXL'],
-        stock: 35
-    },
-
-    // SHIRTS
-    {
-        id: 1005,
-        name: 'Casual Denim Shirt',
-        brand: 'UrbanStyle',
-        category: 'shirts',
-        price: 1499,
-        originalPrice: 2299,
-        discount: 35,
-        rating: 4.5,
-        ratingCount: 198,
-        image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 40
+        sizes: ['S', 'M', 'L', 'XL']
     },
     {
-        id: 1006,
-        name: 'Formal White Shirt',
-        brand: 'CorporateWear',
-        category: 'shirts',
-        price: 1299,
-        originalPrice: 1999,
-        discount: 35,
-        rating: 4.8,
-        ratingCount: 423,
-        image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 55
-    },
-    {
-        id: 1007,
-        name: 'Checkered Casual Shirt',
-        brand: 'Bellevouix',
-        category: 'shirts',
-        price: 1399,
-        originalPrice: 2199,
-        discount: 36,
-        rating: 4.6,
-        ratingCount: 334,
-        image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['M', 'L', 'XL', 'XXL'],
-        stock: 42
-    },
-    {
-        id: 1008,
-        name: 'Linen Beach Shirt',
-        brand: 'SummerVibes',
-        category: 'shirts',
+        id: 2,
+        name: 'Summer Cotton Dress',
+        brand: 'FashionX',
+        category: 'dresses',
         price: 1599,
         originalPrice: 2499,
         discount: 36,
-        rating: 4.7,
+        rating: 4.5,
         ratingCount: 289,
-        image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=400&h=500&fit=crop',
+        image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=500&fit=crop',
         isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 38
+        sizes: ['S', 'M', 'L']
+    },
+    {
+        id: 3,
+        name: 'Party Wear Gown',
+        brand: 'GlamourX',
+        category: 'dresses',
+        price: 3999,
+        originalPrice: 5999,
+        discount: 33,
+        rating: 4.9,
+        ratingCount: 512,
+        image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&h=500&fit=crop',
+        isNew: false,
+        sizes: ['S', 'M', 'L', 'XL']
+    },
+
+    // TOPS & BLOUSES
+    {
+        id: 4,
+        name: 'Silk Blouse',
+        brand: 'Elegance',
+        category: 'tops',
+        price: 1299,
+        originalPrice: 1999,
+        discount: 35,
+        rating: 4.6,
+        ratingCount: 234,
+        image: 'https://images.unsplash.com/photo-1564859228273-274232fdb516?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['S', 'M', 'L', 'XL']
+    },
+    {
+        id: 5,
+        name: 'Casual Crop Top',
+        brand: 'TrendyWear',
+        category: 'tops',
+        price: 799,
+        originalPrice: 1299,
+        discount: 38,
+        rating: 4.4,
+        ratingCount: 456,
+        image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&h=500&fit=crop',
+        isNew: false,
+        sizes: ['S', 'M', 'L']
+    },
+    {
+        id: 6,
+        name: 'Designer Top',
+        brand: 'Bellevouix',
+        category: 'tops',
+        price: 1499,
+        originalPrice: 2299,
+        discount: 35,
+        rating: 4.7,
+        ratingCount: 198,
+        image: 'https://images.unsplash.com/photo-1624206112918-f140f087f9b5?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['S', 'M', 'L', 'XL']
     },
 
     // JEANS & PANTS
     {
-        id: 1009,
-        name: 'Slim Fit Jeans',
+        id: 7,
+        name: 'High Waist Jeans',
         brand: 'DenimCo',
         category: 'jeans',
         price: 1899,
         originalPrice: 2999,
         discount: 37,
         rating: 4.8,
-        ratingCount: 567,
-        image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['28', '30', '32', '34', '36'],
-        stock: 48
-    },
-    {
-        id: 1010,
-        name: 'Relaxed Fit Jeans',
-        brand: 'ComfortDenim',
-        category: 'jeans',
-        price: 1799,
-        originalPrice: 2799,
-        discount: 36,
-        rating: 4.6,
-        ratingCount: 412,
-        image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['28', '30', '32', '34', '36', '38'],
-        stock: 52
-    },
-    {
-        id: 1011,
-        name: 'Black Skinny Jeans',
-        brand: 'TrendyDenim',
-        category: 'jeans',
-        price: 1999,
-        originalPrice: 3199,
-        discount: 38,
-        rating: 4.7,
-        ratingCount: 498,
+        ratingCount: 678,
         image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['28', '30', '32', '34', '36'],
-        stock: 44
+        isNew: false,
+        sizes: ['28', '30', '32', '34']
     },
     {
-        id: 1012,
-        name: 'Cargo Pants',
-        brand: 'UrbanUtility',
+        id: 8,
+        name: 'Skinny Fit Jeans',
+        brand: 'FashionX',
         category: 'jeans',
         price: 1699,
         originalPrice: 2599,
         discount: 35,
-        rating: 4.5,
-        ratingCount: 356,
-        image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 40
+        rating: 4.6,
+        ratingCount: 423,
+        image: 'https://images.unsplash.com/photo-1598522325074-042db73aa4e6?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['28', '30', '32', '34', '36']
     },
     {
-        id: 1013,
-        name: 'Chino Pants',
-        brand: 'SmartCasual',
+        id: 9,
+        name: 'Palazzo Pants',
+        brand: 'ComfortWear',
         category: 'jeans',
-        price: 1499,
-        originalPrice: 2299,
+        price: 1299,
+        originalPrice: 1999,
         discount: 35,
-        rating: 4.6,
-        ratingCount: 278,
-        image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['28', '30', '32', '34', '36'],
-        stock: 46
+        rating: 4.5,
+        ratingCount: 312,
+        image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=500&fit=crop',
+        isNew: false,
+        sizes: ['S', 'M', 'L', 'XL']
     },
 
-    // JACKETS
+    // ETHNIC WEAR
     {
-        id: 1014,
-        name: 'Denim Jacket',
-        brand: 'ClassicDenim',
-        category: 'jackets',
-        price: 2499,
-        originalPrice: 3999,
-        discount: 38,
+        id: 10,
+        name: 'Ethnic Kurta Set',
+        brand: 'TraditionalWear',
+        category: 'ethnic',
+        price: 2299,
+        originalPrice: 3499,
+        discount: 34,
         rating: 4.8,
-        ratingCount: 689,
-        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['M', 'L', 'XL', 'XXL'],
-        stock: 30
+        ratingCount: 567,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['S', 'M', 'L', 'XL']
     },
     {
-        id: 1015,
-        name: 'Bomber Jacket',
-        brand: 'StreetWear',
-        category: 'jackets',
+        id: 11,
+        name: 'Designer Saree',
+        brand: 'SilkHeritage',
+        category: 'ethnic',
+        price: 3999,
+        originalPrice: 5999,
+        discount: 33,
+        rating: 4.9,
+        ratingCount: 789,
+        image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e5?w=400&h=500&fit=crop',
+        isNew: false,
+        sizes: ['One Size']
+    },
+    {
+        id: 12,
+        name: 'Anarkali Suit',
+        brand: 'EthnicStyle',
+        category: 'ethnic',
         price: 2799,
         originalPrice: 4299,
         discount: 35,
         rating: 4.7,
-        ratingCount: 534,
-        image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 28
-    },
-    {
-        id: 1016,
-        name: 'Leather Jacket',
-        brand: 'LuxeStyle',
-        category: 'jackets',
-        price: 4999,
-        originalPrice: 7999,
-        discount: 38,
-        rating: 4.9,
-        ratingCount: 812,
-        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['M', 'L', 'XL'],
-        stock: 20
-    },
-    {
-        id: 1017,
-        name: 'Windbreaker Jacket',
-        brand: 'ActiveWear',
-        category: 'jackets',
-        price: 1999,
-        originalPrice: 2999,
-        discount: 33,
-        rating: 4.5,
         ratingCount: 445,
-        image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 35
+        image: 'https://images.unsplash.com/photo-1583391265373-83b386c15268?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['S', 'M', 'L', 'XL']
     },
 
-    // HOODIES
+    // WESTERN WEAR
     {
-        id: 1018,
-        name: 'Classic Pullover Hoodie',
-        brand: 'ComfortWear',
-        category: 'hoodies',
-        price: 1599,
-        originalPrice: 2499,
-        discount: 36,
-        rating: 4.7,
-        ratingCount: 678,
-        image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 55
-    },
-    {
-        id: 1019,
-        name: 'Zip-Up Hoodie',
-        brand: 'SportStyle',
-        category: 'hoodies',
-        price: 1699,
-        originalPrice: 2699,
-        discount: 37,
+        id: 13,
+        name: 'Jumpsuit',
+        brand: 'ModernStyle',
+        category: 'western',
+        price: 2499,
+        originalPrice: 3799,
+        discount: 34,
         rating: 4.6,
-        ratingCount: 523,
-        image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 48
-    },
-    {
-        id: 1020,
-        name: 'Oversized Hoodie',
-        brand: 'StreetStyle',
-        category: 'hoodies',
-        price: 1799,
-        originalPrice: 2799,
-        discount: 36,
-        rating: 4.8,
-        ratingCount: 734,
-        image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['M', 'L', 'XL', 'XXL'],
-        stock: 42
-    },
-    {
-        id: 1021,
-        name: 'Tech Fleece Hoodie',
-        brand: 'TechWear',
-        category: 'hoodies',
-        price: 2199,
-        originalPrice: 3499,
-        discount: 37,
-        rating: 4.7,
-        ratingCount: 589,
-        image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 38
-    },
-
-    // SHORTS
-    {
-        id: 1022,
-        name: 'Denim Shorts',
-        brand: 'SummerStyle',
-        category: 'shorts',
-        price: 999,
-        originalPrice: 1599,
-        discount: 38,
-        rating: 4.5,
-        ratingCount: 312,
-        image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['28', '30', '32', '34', '36'],
-        stock: 50
-    },
-    {
-        id: 1023,
-        name: 'Cargo Shorts',
-        brand: 'OutdoorWear',
-        category: 'shorts',
-        price: 1199,
-        originalPrice: 1899,
-        discount: 37,
-        rating: 4.6,
-        ratingCount: 267,
-        image: 'https://images.unsplash.com/photo-1591195850194-6b838b2fa2b3?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 45
-    },
-    {
-        id: 1024,
-        name: 'Athletic Shorts',
-        brand: 'ActiveWear',
-        category: 'shorts',
-        price: 899,
-        originalPrice: 1499,
-        discount: 40,
-        rating: 4.7,
-        ratingCount: 445,
-        image: 'https://images.unsplash.com/photo-1591195851194-22d37f3bc30e?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 60
-    },
-    {
-        id: 1025,
-        name: 'Chino Shorts',
-        brand: 'SmartCasual',
-        category: 'shorts',
-        price: 1099,
-        originalPrice: 1799,
-        discount: 39,
-        rating: 4.5,
         ratingCount: 334,
-        image: 'https://images.unsplash.com/photo-1591195850194-6b838b2fa2b3?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['28', '30', '32', '34', '36'],
-        stock: 42
+        image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=500&fit=crop',
+        isNew: true,
+        sizes: ['S', 'M', 'L', 'XL']
     },
-
-    // SPORTSWEAR
     {
-        id: 1026,
-        name: 'Running Track Pants',
-        brand: 'AthleticPro',
-        category: 'sportswear',
+        id: 14,
+        name: 'Blazer Set',
+        brand: 'CorporateWear',
+        category: 'western',
+        price: 3299,
+        originalPrice: 4999,
+        discount: 34,
+        rating: 4.8,
+        ratingCount: 267,
+        image: 'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=400&h=500&fit=crop',
+        isNew: false,
+        sizes: ['S', 'M', 'L', 'XL']
+    },
+    {
+        id: 15,
+        name: 'Formal Skirt',
+        brand: 'OfficeWear',
+        category: 'western',
         price: 1499,
         originalPrice: 2299,
         discount: 35,
-        rating: 4.6,
-        ratingCount: 489,
-        image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 48
-    },
-    {
-        id: 1027,
-        name: 'Compression T-Shirt',
-        brand: 'FitGear',
-        category: 'sportswear',
-        price: 999,
-        originalPrice: 1699,
-        discount: 41,
-        rating: 4.7,
-        ratingCount: 567,
-        image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 55
-    },
-    {
-        id: 1028,
-        name: 'Training Joggers',
-        brand: 'ActiveWear',
-        category: 'sportswear',
-        price: 1699,
-        originalPrice: 2599,
-        discount: 35,
-        rating: 4.8,
-        ratingCount: 623,
-        image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=500&fit=crop',
-        isNew: false,
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        stock: 50
-    },
-    {
-        id: 1029,
-        name: 'Sports Tank Top',
-        brand: 'GymWear',
-        category: 'sportswear',
-        price: 799,
-        originalPrice: 1299,
-        discount: 38,
         rating: 4.5,
-        ratingCount: 398,
-        image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=500&fit=crop',
+        ratingCount: 198,
+        image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&h=500&fit=crop',
         isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 58
-    },
-    {
-        id: 1030,
-        name: 'Performance Shorts',
-        brand: 'AthleticPro',
-        category: 'sportswear',
-        price: 1099,
-        originalPrice: 1799,
-        discount: 39,
-        rating: 4.6,
-        ratingCount: 456,
-        image: 'https://images.unsplash.com/photo-1591195851194-22d37f3bc30e?w=400&h=500&fit=crop',
-        isNew: true,
-        sizes: ['S', 'M', 'L', 'XL'],
-        stock: 52
+        sizes: ['S', 'M', 'L', 'XL']
     }
 ];
 
@@ -503,7 +259,7 @@ function getAdminProductsForStore(category) {
     }
 }
 
-menProducts.unshift(...getAdminProductsForStore('men'));
+womenProducts.unshift(...getAdminProductsForStore('women'));
 
 /**
  * SHARED CART & WISHLIST FUNCTIONALITY
@@ -515,7 +271,7 @@ let wishlist = JSON.parse(sessionStorage.getItem('wishlist')) || [];
 let quickViewSelectedSize = null;
 
 let currentCategory = 'all';
-let filteredProducts = [...menProducts];
+let filteredProducts = [...womenProducts];
 
 // ==========================================
 // DOM ELEMENTS
@@ -647,7 +403,7 @@ function renderProducts() {
 // FILTER PRODUCTS
 // ==========================================
 function filterProducts() {
-    let filtered = [...menProducts];
+    let filtered = [...womenProducts];
 
     // Category filter
     if (currentCategory !== 'all') {
@@ -686,7 +442,7 @@ function sortProducts(sortType) {
             filteredProducts.sort((a, b) => b.ratingCount - a.ratingCount);
             break;
         default:
-            filteredProducts = [...menProducts];
+            filteredProducts = [...womenProducts];
     }
     renderProducts();
 }
@@ -696,33 +452,33 @@ function sortProducts(sortType) {
 // ==========================================
 function updateCategoryTitle() {
     const categoryNames = {
-        'all': 'All Men\'s Products',
-        'tshirts': 'T-Shirts',
-        'shirts': 'Shirts',
+        'all': 'All Women\'s Products',
+        'dresses': 'Dresses',
+        'tops': 'Tops & Blouses',
         'jeans': 'Jeans & Pants',
-        'jackets': 'Jackets',
-        'hoodies': 'Hoodies',
-        'shorts': 'Shorts',
-        'sportswear': 'Sportswear'
+        'ethnic': 'Ethnic Wear',
+        'western': 'Western Wear'
     };
-    categoryTitle.textContent = categoryNames[currentCategory] || 'Men\'s Products';
+    categoryTitle.textContent = categoryNames[currentCategory] || 'Women\'s Products';
 }
 
 // ==========================================
 // CART FUNCTIONS
 // ==========================================
 function addToCart(productId, selectedSize = null) {
-    const product = menProducts.find(p => p.id === productId);
+    const product = womenProducts.find(p => p.id === productId);
     if (!product) return false;
 
     const sizeToAdd =
         selectedSize !== null && selectedSize !== undefined ? selectedSize : quickViewSelectedSize;
 
+    // require size if product has sizes
     if (Array.isArray(product.sizes) && product.sizes.length > 0 && !sizeToAdd) {
         showNotification('Please select a size first');
         return false;
     }
 
+    // unique cart line by (id + selectedSize)
     const existingItem = cart.find(
         item => item.id === productId && (item.selectedSize || null) === (sizeToAdd || null)
     );
@@ -753,6 +509,7 @@ function updateQuantity(productId, selectedSize, change) {
     const item = cart.find(
         it => it.id === productId && (it.selectedSize || null) === (selectedSize || null)
     );
+
     if (item) {
         item.quantity += change;
         if (item.quantity <= 0) {
@@ -820,7 +577,7 @@ function updateCartCount() {
 // ==========================================
 function toggleWishlist(productId) {
     const index = wishlist.indexOf(productId);
-    const product = menProducts.find(item => item.id === productId);
+    const product = womenProducts.find(item => item.id === productId);
     const savedProducts = JSON.parse(sessionStorage.getItem('wishlistProducts') || '{}');
 
     if (index > -1) {
@@ -851,7 +608,7 @@ function updateWishlistCount() {
 // QUICK VIEW MODAL
 // ==========================================
 function quickView(productId) {
-    const product = menProducts.find(p => p.id === productId);
+    const product = womenProducts.find(p => p.id === productId);
     const modal = document.getElementById('quickViewModal');
     const modalBody = document.getElementById('modalBody');
 
@@ -872,7 +629,7 @@ function quickView(productId) {
                         <span style="font-size: 20px; color: var(--text-light); text-decoration: line-through;">
                             Rs.${product.originalPrice}
                         </span>
-                        <span style="font-size: 16px; color: var(--primary-color); font-weight: 600;">
+                        <span style="font-size: 16px; color: var(--primary); font-weight: 600;">
                             (${product.discount}% OFF)
                         </span>
                     ` : ''}
@@ -897,10 +654,10 @@ function quickView(productId) {
                     <button data-quick-view-add
                             disabled
                             onclick="handleQuickViewAddToCart(${product.id})"
-                            style="flex: 1; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">
+                            style="flex: 1; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: not-allowed; opacity: 0.45;">
                         Select size to add
                     </button>
-                    <button onclick="toggleWishlist(${product.id})" 
+                    <button onclick="toggleWishlist(${product.id})"
                             style="padding: 15px 20px; background: white; border: 2px solid var(--border-color); border-radius: 8px; font-size: 20px; cursor: pointer;">
                         ${isInWishlist(product.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}
                     </button>
@@ -983,3 +740,4 @@ function showNotification(message) {
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
+

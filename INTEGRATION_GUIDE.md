@@ -11,13 +11,13 @@ This project has three parts:
 Recommended from the project root:
 
 ```powershell
-.\sql\setup_mysql_database.ps1 -User root
+.\setup_mysql_database.ps1 -User root
 ```
 
 If `mysql.exe` is not on your PATH, pass the installed path:
 
 ```powershell
-.\sql\setup_mysql_database.ps1 -MysqlExe "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -User root
+.\setup_mysql_database.ps1 -MysqlExe "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -User root
 ```
 
 You can also run the SQL manually:
@@ -81,12 +81,12 @@ Stores recent admin dashboard activity.
 
 Use these files as prepared-statement templates in Java:
 
-- `sql/database/queries/user_queries.sql`
-- `sql/database/queries/product_queries.sql`
-- `sql/database/queries/cart_queries.sql`
-- `sql/database/queries/order_queries.sql`
-- `sql/database/queries/admin_queries.sql`
-- `sql/database/queries/reviews_queries.sql`
+- `sql/user_queries.sql`
+- `sql/product_queries.sql`
+- `sql/cart_queries.sql`
+- `sql/order_queries.sql`
+- `sql/admin_queries.sql`
+- `sql/reviews_queries.sql`
 
 The `?` symbols are placeholders. In Java, fill them with `PreparedStatement`.
 
